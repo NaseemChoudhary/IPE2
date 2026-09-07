@@ -1,0 +1,4 @@
+function Application({ application, onUpdate, onDelete }) {
+    return <article className="border p-3 mb-3"><h2>{application.company}</h2><p>Role: {application.role}</p><p>Date: {application.date}</p><p>Status: {application.status}</p><select className="form-select mb-2" value={application.status} onChange={(event) => onUpdate(application.id, event.target.value)}><option>Applied</option><option>Interview</option><option>Selected</option><option>Rejected</option></select><button className="btn btn-outline-danger btn-sm" onClick={() => onDelete(application.id)}>Delete</button></article>;
+}
+export default Application;
